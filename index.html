@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Top Navigation 範例</title>
+  <style>
+    body { margin: 0; font-family: Arial; }
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .navbar a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="1.html" target="contentFrame" class="active">首頁</a>
+  <a href="webdesign.html" target="contentFrame">網頁設計</a>
+  <a href="project.html" target="contentFrame">專題製作</a>
+  <a href="contact.html" target="contentFrame">聯絡資訊</a>
+</div>
+
+<iframe name="contentFrame" src="home.html"></iframe>
+
+</body>
+</html>
