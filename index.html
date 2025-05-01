@@ -37,13 +37,27 @@
 <body>
 
 <div class="navbar">
-  <a href="1.html" target="contentFrame" class="active">首頁</a>
-  <a href="webdesign.html" target="contentFrame">網頁設計</a>
-  <a href="project.html" target="contentFrame">專題製作</a>
+  <a href="home.html" target="contentFrame" class="active">首頁</a>
+  <a href="apple.html" target="contentFrame">文字設計</a>
+  <a href="clip-text.html" target="contentFrame">文字背景</a>
   <a href="contact.html" target="contentFrame">聯絡資訊</a>
 </div>
 
 <iframe name="contentFrame" src="home.html"></iframe>
 
+<script>
+  // 抓所有導覽按鈕
+  const navLinks = document.querySelectorAll('.navbar a');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // 移除所有 active
+      navLinks.forEach(l => l.classList.remove('active'));
+      // 將目前點擊的這個加上 active
+      this.classList.add('active');
+    });
+  });
+</script>
 </body>
+
 </html>

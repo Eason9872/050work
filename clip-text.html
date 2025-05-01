@@ -1,61 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
-  <title>使用 background-clip 製作文字背景效果</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      text-align: center;
-      background-color: #fff;
-      padding: 50px;
-    }
+<meta charset="UTF-8">
+<title>Gradient Text</title>
+<style>
+h1 {
+  margin: 10px;
+  padding: 0;
+  width: max-content;
+  font-family: impact, arial-black;  /* 設定成比較粗的字體 */
+  font-size: 80px;
+  line-height: 1;
+}
 
-    h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
+/* 沒有設定 background-clip 就不會進行裁切 */
+.a0 {
+  background: linear-gradient(#f00, #f90, #fd0, #0c0, #09f);
+}
 
-    .text-style {
-      font-size: 80px;
-      font-weight: bold;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-      margin: 40px 0;
-    }
+/* 文字顏色設定為透明 + background-clip: text */
+.a1 {
+  color: #0000;  /* 設定透明色 */
+  background: linear-gradient(#f00, #f90, #fd0, #0c0, #09f);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 
-    /* 樣式一：黑漸層 + 彩虹背景（文字上黑下透明） */
-    .style1 {
-      background: linear-gradient(to right, red, orange, yellow, green, blue);
-      -webkit-text-fill-color: black; /* 保留黑色文字顯示 */
-      -webkit-background-clip: border-box; /* 非文字裁切 */
-    }
+/* 線性漸層位置調整 */
+.a2 {
+  color: #0000;
+  background: linear-gradient(#f00 50%, #fa0 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 
-    /* 樣式二：橘→黃→綠→藍 漸層背景裁切到文字 */
-    .style2 {
-      background: linear-gradient(to right, orange, yellow, green, deepskyblue);
-    }
-
-    /* 樣式三：紅→橘→黃 水平漸層文字 */
-    .style3 {
-      background: linear-gradient(to right, red, orange, gold);
-    }
-
-    /* 樣式四：城市圖片作為文字背景 */
-    .style4 {
-      background: url('https://picsum.photos/id/1011/1000/400') center center / cover no-repeat;
-    }
-  </style>
+/* 圖片作為背景 */
+.a3 {
+  color: #0000;
+  background: url(https://img.freepik.com/free-photo/empty-sea-beach-background_74190-313.jpg);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+</style>
 </head>
 <body>
 
-  <h2>使用 <code>background-clip</code> 製作文字背景效果</h2>
-
-  <div class="text-style style1">HAVE A NICE DAY !</div>
-  <div class="text-style style2">HAVE A NICE DAY !</div>
-  <div class="text-style style3">HAVE A NICE DAY !</div>
-  <div class="text-style style4">HAVE A NICE DAY !</div>
+<h1 class="a0">Hello</h1>
+<h1 class="a1">Hello</h1>
+<h1 class="a2">Hello</h1>
+<h1 class="a3">Hello</h1>
 
 </body>
 </html>
